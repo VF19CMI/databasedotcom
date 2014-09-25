@@ -51,9 +51,9 @@ module Databasedotcom
       end
 
       # Posts a status update as the User identified by _subject_id_ with content _text_.
-      def self.post_status(client, subject_id, text)
+      def self.post_status(client, subject_id, text, mention)
         url = "/services/data/v#{client.version}/chatter/users/#{subject_id}/status"
-        result = client.http_post(url, nil, :text => text)
+        result = client.http_post(url, nil, :text => text, :mention => mention)
         JSON.parse(result.body)
       end
 
