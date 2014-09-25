@@ -104,8 +104,8 @@ module Databasedotcom
       end
 
       # Posts a new status with content _text_ for this User.
-      def post_status(text)
-        self.class.post_status(self.client, self.id, text)
+      def post_status(text, mention)
+        self.class.post_status(self.client, self.id, text, mention)
       end
 
       # Deletes the current status of this User. Returns the deleted status.
